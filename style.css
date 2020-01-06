@@ -1,179 +1,142 @@
-
-*{
-margin:0px;
-padding:0px;
+body {
+	margin: 0;
+	padding: 0;
+	background: #234652 url(https://designshack.net/tutorialexamples/letitsnow/snow.png);
+	animation: stars 25s linear infinite;
 }
-.menubar{
-text-align:center;
-background-color:black;
-
-}
-.menubar ul li a{
-color:white;
-text-decoration:none;
-}
-.bi{
-background-image:url('../img/1.jpg');
-background-repeat:no repeat;
-background-size:cover;
-background-attachment:fixed;
-}
-.menubar ul{
-display:inline-flex;
-list-style:none;
-}   
-.menubar ul li{
-width:120px;
-padding:15px;
-margin:15px;
-
-}
-.menubar ul li:hover{
-background-color:orange;
-border-radius:10px;
-}
-.submenu{
-display:none
-}
-.menubar ul li:hover .submenu{
-display:block;
-position:absolute;
-z-index:1px;
-margin-top:15px;
-margin-left:-15px;
-margin-right:15px;
-border-radius:10px;
-background:black;
-
-}
-.menubar ul li:hover .submenu ul{
-display:block;
-    margin:10px;}
-
-.menubar ul li:hover .submenu ul li{
-width:100px;
-padding:10px;
-border-bottom:1px solid red;
-}
-
-.row{
-display:flex;
-margin-left:15px;
-margin-right:15px;
-text-align:justify;
-}
-.col{
-padding:50px;
-margin:20px;
-background-color:rgba(0,0,0,0.4);
-box-sizing:border-box;
-height:350px;
-width:450px;
-}
-.row h1{
-text-align:center;
-color:white;
-text-decoration:underline;
-margin:20px;
-
-}
-.row p{
-color:white;
-}
-.ft{
-background-color:rgba(0,0,0,1);
-color:white;
-width:100%;
-padding:50px;
-text-align:center;
-}
-
-.ft{
-	background-color:rgba(0,0,0,1);
-	color:white;
-	width:100%;
-	padding:50px;
-	
-}
-.gal{
-	text-align:center;
+@keyframes stars {
+	0%{
+		background-position: 0;
 	}
-.gal img{
-  width:300px;
-  height:150px;
-  margin:30px;
-  box-shadow:10px 10px 5px black;
-  filter:grayscale(100%);
-  transition:1s;
-  
-}  
-.gal img:hover{
-	filter:none;
-	transform:scale(1.2);
+	100%{
+		background-position: 100%;
+	}
 }
-	
-.login{
-	color:red;
-	border:1px solid blue;
-	padding:50px;
-	background-color:black;
-	width:300px;
-	height:300px;
-	position:absolute;
-	
-}
-.frm{
-	padding:20px;
-	margin:20px;
-	width:200px;
-	
-}
-.frm-btn{
-	text-align:right;
-}
-.b{
-	background-image:url('../img/3.jpg');
-    background-repeat:no repeat;
-    background-size:cover;
-    background-attachment:fixed;
-}
-
-
-.cont {
-	width:450px;
+.container {
 	text-align:center;
-	height:500px;
-	position:relative;
-	left:400px;
-	margin:10px;
-	padding:40px;
-	background-color:rgba(0,0,0,0.8);
-	border-radius:10px;
+	position: relative;
+	width: 100%;
+	height: 640px;
+	overflow: hidden;
 }
-.frm{
-  width:300px;
-  margin:15px;
-  padding:20px;
-  background-color:rgba(0,0,0,0.8);
-  color:white;
-  outline:none;
-  border:1px solid #5b80a4;
-  transition:0.5s;
-} 
-.frm:focus{
- box-shadow:0px 0px 20px 6px #5b80a4;
- 
- 
-} 
-.cont textarea{
-	height:100px;
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
-.frm-btn{
-	float:right;
-    padding:15px 50px;
-	background:rgba(0,0,0,0.6);
-	color:white;
-	outline:none;
-	border-radius:30px;
-	
+h1 {
+	font-size: 6em;
+	color: #fff;
+	position: absolute;
+	top: -10px;
+	right: 280px;
+	font-family: 'Bad Script', cursive;
 }
+
+.moon:before {
+	content: '';
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	background: #234652;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.moon:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -325px;
+	height: 100%;
+	width: 400px;
+	background: linear-gradient(to left, rgba(0,0,0,.4) 0%, rgba(0,0,0,0)100%);
+	z-index: -1;
+	transform-origin: right;
+	transform: rotate(-45deg);
+}
+.cloud-left {
+	position: absolute;
+	color: white;
+	left: -260%;
+	top:-120%;
+	font-size: 12em;
+}
+.cloud-left:after{
+	content: '';
+	top: 5px;
+	left: -420px;
+	position: absolute;
+	height: 175px;
+	width: 560px;
+	background: linear-gradient(to left, rgba(0,0,0,.4) 0%, rgba(0,0,0,0)100%);
+	z-index: -1;
+	transform-origin: right;
+	transform: rotate(-45deg);
+}
+.cloud-right {
+	position: absolute;
+	color: white;
+	right: -230%;
+	top: -30%;
+	font-size: 8em;
+}
+.cloud-right:after{
+	content: '';
+	top: 5px;
+	right: 44px;
+	position: absolute;
+	height: 115px;
+	width: 460px;
+	background: linear-gradient(to left, rgba(0,0,0,.4) 0%, rgba(0,0,0,0)100%);
+	z-index: -1;
+	transform-origin: right;
+	transform: rotate(-45deg);
+}
+/*beginning of comet*/
+.comet {
+  position: absolute;
+  z-index: 1;
+  top: -160px;
+  left: -215px;
+  border-radius: 50%;
+  margin: 200px;
+  background: yellow;
+  width: 3px;
+  height: 2px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(00deg);
+  background: -webkit-radial-gradient(center ellipse, rgba(255, 255, 255, 0.5) 0%, rgba(246, 246, 246, 0.83) 47%, rgba(237, 237, 237, 0.63) 100%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(246, 246, 246, 0.83) 47%, rgba(237, 237, 237, 0.63) 100%);
+  box-shadow: -60px 0px 6px 30px #fff;
+  animation: comet 5s linear infinite;
+}
+
+@keyframes comet {
+  
+  0% {
+    -webkit-transform: translate(0px, 0px) rotate(0deg);
+            transform: translate(0px, 0px) rotate(0deg);
+            box-shadow: -6px 0px 4px 1px #fff;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(246, 246, 246, 0.83) 47%, rgba(237, 237, 237, 0.63) 100%);
+  } 
+  45% {
+    -webkit-transform: translate(20px, -20px) rotate(30deg);
+            transform: translate(20px, -20px) rotate(30deg);
+            box-shadow: -6px 0px 4px 1px #fff;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.8) 0%, rgba(246, 246, 246, 0.83) 47%, rgba(237, 237, 237, 0.63) 100%);
+  }
+  95% {
+    -webkit-transform: translate(1460px, 130px) rotate(30deg);
+            transform: translate(1460px, 130px) rotate(30deg);
+            box-shadow: -6px 0px 4px 1px #fff;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(246, 246, 246, 0.83) 47%, rgba(237, 237, 237, 0.63) 100%);
+  }
+  100% {
+    -webkit-transform: translate(1460px, 130px) rotate(30deg);
+            transform: translate(1460px, 130px) rotate(30deg);
+            box-shadow: none;
+            background: none;
+  }
+/*end of comet*/
